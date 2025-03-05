@@ -1,0 +1,7 @@
+ --------- Explanation of Each Library ---------
+pandas → For data manipulation and analysis.
+numpy → Supports numerical operations and efficient data handling.
+matplotlib → Helps create visualizations (graphs and charts).
+seaborn → Enhances data visualization with advanced statistical plots.
+sqlalchemy → Enables interaction between Python and MySQL.
+pymysql → Allows Python to connect to MySQL databases.
