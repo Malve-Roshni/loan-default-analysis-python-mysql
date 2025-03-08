@@ -1,89 +1,142 @@
-Loan Default Analysis using Python & MySQL
+# Loan Default Analysis using Python & MySQL
 
-------Project Overview-----
+## 📌 Project Overview
+This project analyzes loan default data using **Python** and **MySQL** to identify patterns in loan approvals and defaults. The dataset includes details such as **credit scores, income levels, loan amounts, and interest rates**.
 
-This project analyzes loan default data using Python and MySQL. The goal is to clean, analyze, and visualize the data to understand loan approval trends based on factors like credit score, income, loan amount, and interest rate.
+Using **MySQL for data storage** and **Python (Pandas, Seaborn, Matplotlib) for analysis**, this project provides insights into how financial factors influence loan approvals.
 
-By leveraging MySQL for data storage and Python (Pandas, Seaborn, Matplotlib) for analysis, this project provides insights into loan approval patterns.
+---
 
-------Project Structure-----
+## 📂 Project Structure
+```
 Loan_Default_Analysis_Python_MySQL/
-│── config.py              # Connects Python to MySQL  
-│── load_data.py           # Loads data from MySQL into Pandas  
-│── loan_analysis.py       # Cleans, analyzes, and visualizes data  
-│── run_queries.py         # Runs SQL queries on MySQL database  
-│── requirements.txt       # Lists required Python libraries  
-│── README.md              # Project documentation  
-│  
-├── Dataset/  
-│   ├── loan_default.csv   # Loan dataset  
-│  
-├── Output/                # Stores visualization outputs  
-│  
-├── SQL_scripts/  
-│   ├── create_table.sql   # SQL script for creating tables 
+│── config.py           # Connects Python to MySQL
+│── load_data.py        # Loads data from MySQL into Pandas
+│── loan_analysis.py    # Cleans, analyzes, and visualizes data
+│── run_queries.py      # Runs SQL queries on MySQL database
+│── requirements.txt    # Lists required Python libraries
+│── README.md           # Project documentation
+│
+├── Dataset/
+│   ├── loan_default.csv    # Loan dataset
+│
+├── Output/                 # Stores visualization outputs
+│
+├── SQL_scripts/
+│   ├── create_table.sql    # SQL script for creating tables
+```
 
-------Setup & Installation for Project------
-1. Installed MySQL and MySQL Shell
-2. Installed Python and VS Code
-3. Installed Required Python Libraries
+---
 
-Run the following command to install dependencies:
+## ⚙️ Setup & Installation
 
+### **1️⃣ Install Dependencies**
+Ensure you have **Python, MySQL, and VS Code** installed.
+Run the following command to install required Python libraries:
+```sh
 pip install -r requirements.txt
-4. Updated MySQL Credentials
-Modifyed config.py to include MySQL database credentials before running queries.
-5. Run the Scripts
-python load_data.py        # Loads data into Pandas  
-python loan_analysis.py    # Analyzes and visualizes the data  
-The generated visualizations will be saved in the Output/ folder.
+```
 
-------Key Insights from Analysis-------
+### **2️⃣ Set Up MySQL Database**
+- Install MySQL and MySQL Shell.
+- Open MySQL Shell and create a database:
+  ```sql
+  CREATE DATABASE loan_analysis;
+  ```
+- Run the SQL script to create tables:
+  ```sh
+  mysql -u root -p < SQL_scripts/create_table.sql
+  ```
+
+### **3️⃣ Update MySQL Credentials**
+Modify **config.py** to include your MySQL **username, password, host, and database name** before running queries.
+
+### **4️⃣ Load Data into MySQL**
+Run the script to insert the dataset into MySQL:
+```sh
+python load_data.py
+```
+
+### **5️⃣ Run Data Analysis**
+Execute the analysis script to clean, analyze, and visualize loan data:
+```sh
+python loan_analysis.py
+```
+✅ The generated **visualizations** will be saved in the `Output/` folder.
+
+### **6️⃣ (Optional) Execute SQL Queries**
+Run specific SQL queries on the database using:
+```sh
+python run_queries.py
+```
+
+---
+
+## 🔍 Key Insights from Analysis
 This project provides insights into loan approvals based on financial factors:
 
-Credit Score Trends 📊: Visualizes how credit scores impact loan approvals.
-Loan Approval Rates ✅: Shows approval vs. rejection rates.
-Income & Loan Amount Impact 💰: Analyzes how income and loan amount affect approvals.
+- **📊 Credit Score Trends:** How credit scores impact loan approvals.
+- **✅ Loan Approval Rates:** Approval vs. rejection trends.
+- **💰 Income & Loan Amount Impact:** How income and loan amount affect approvals.
 
------Technologies Used-----
-Python: Pandas, Seaborn, Matplotlib, SQLAlchemy
-MySQL: Data storage & queries
-VS Code: Development environment
-GitHub: Version control
+---
 
-------Usage Instructions-----
+## 🛠️ Technologies Used
+- **Python**: Pandas, Seaborn, Matplotlib, SQLAlchemy
+- **MySQL**: Data storage & SQL queries
+- **VS Code**: Development environment
+- **GitHub**: Version control
 
-1. Clone the Repository
-First, download the project from GitHub:
-git clone <repo_url>
+---
+
+## 🚀 Usage Instructions
+
+### **1️⃣ Clone the Repository**
+```sh
+git clone https://github.com/Malve-Roshni/loan-default-analysis-python-mysql.git
 cd Loan_Default_Analysis_Python_MySQL
+```
 
-2. Install Required Libraries
-Install all necessary Python libraries from requirements.txt:
+### **2️⃣ Install Required Libraries**
+```sh
 pip install -r requirements.txt
+```
 
-3. Set Up MySQL Database
-Open MySQL Shell and create a new database.
-Run the SQL script to create the required tables:
-mysql -u root -p < SQL_scripts/create_table.sql
+### **3️⃣ Set Up MySQL Database**
+- Open MySQL Shell and create a database:
+  ```sql
+  CREATE DATABASE loan_analysis;
+  ```
+- Run the SQL script to create tables:
+  
+  mysql -u root -p < SQL_scripts/create_table.sql
+  
 
-4. Update MySQL Credentials
-Modify config.py with your MySQL username, password, host, and database name to enable database connection.
+### **4️⃣ Update MySQL Credentials**
+Modify **config.py** with your MySQL **username, password, host, and database name** to enable database connection.
 
-5. Load Data into MySQL
-Run the script to insert the dataset into the MySQL database:
+### **5️⃣ Load Data into MySQL**
+```sh
 python load_data.py
 
-6. Run Data Analysis
-Execute the analysis script to clean, analyze, and visualize loan data:
+
+### **6️⃣ Run Data Analysis**
+```sh
 python loan_analysis.py
-The visualizations will be stored in the Output/ folder.
+```
+✅ Graphs and insights will be saved in the `Output/` folder.
 
-7. Execute SQL Queries (Optional)
-You can run specific SQL queries on the database using:
-python run_queries.py
-
-8. Check Results
-Analysis outputs (graphs and insights) will be available in the Output/ folder.
-Database tables can be checked directly in MySQL using:
+### **7️⃣ Check SQL Query Results**
+Run queries directly in MySQL:
+```sql
 SELECT * FROM loan_table;
+```
+
+---
+
+## 📄 About
+**Loan Default Analysis using Python & MySQL**: A comprehensive data pipeline for querying, cleaning, analyzing, and visualizing loan data. Includes **SQL queries, Python scripts, and detailed reports**.
+
+🔗 **GitHub Repository:** [Loan Default Analysis](https://github.com/Malve-Roshni/loan-default-analysis-python-mysql)
+
+---
